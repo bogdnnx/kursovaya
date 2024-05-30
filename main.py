@@ -66,7 +66,7 @@ def get_best_distribution(data):
 df = pd.read_csv("2015.csv")
 
 # Выбираем столбец данных
-selected_column = 'dbz_geo'
+selected_column = 'dbn_geo'
 
 # Удаляем пропущенные и нечисловые значения
 data = df[selected_column].dropna()
@@ -83,7 +83,7 @@ if best_distribution is not None:
 
     # Строим гистограмму данных
     fig, ax1 = plt.subplots(figsize=(10, 6))
-    sns.histplot(data, kde=False, color='skyblue', bins=20, stat='density', label='Данные', ax=ax1)
+    sns.histplot(data, kde=False, color='skyblue', bins=200, stat='density', label='Данные', ax=ax1)
 
     # Плотность наилучшего распределения
     x = np.linspace(data.min(), data.max(), 1000)
